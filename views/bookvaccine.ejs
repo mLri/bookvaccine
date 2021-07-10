@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=`, initial-scale=1.0">
+  <title>Book Vaccine</title>
+  <style media="screen">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      background: rgb(233, 233, 233);
+    }
+
+    #center {
+      background: rgb(255, 255, 255);
+      width: 60%;
+      height: 100vh;
+      margin: 0 auto;
+    }
+
+    #content {
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    .grid__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      padding: 5px;
+    }
+
+    .grid__item {
+      background-color: rgba(240, 240, 240, 0.8);
+      border: 1px solid rgba(212, 212, 212, 0.8);
+      padding: 10px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .day {
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .click {
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .click:hover {
+      /* background-color: rgb(248, 248, 248); */
+      border: 1px solid black;
+    }
+
+    .empty {
+      color: green;
+    }
+
+    .full {
+      color: red;
+    }
+
+    h1 {
+      padding-top: 40px;
+      text-align: center;
+    }
+
+    a {
+      color: gray;
+    }
+
+    a:hover {
+      color: black;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 50%;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* The Modal (background) */
+    .modalFull {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 50%;
+    }
+
+    /* The CloseFull Button */
+    .closeModalFull {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .closeModalFull:hover,
+    .closeModalFull:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    .input__container {
+      width: 100%;
+      /* padding: 10px; */
+    }
+
+    .input {
+      width: 100%;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #000;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    .input::placeholder {
+      opacity: .3;
+    }
+
+    .input:focus {
+      outline: none;
+      border-bottom: 2px solid #000;
+    }
+
+    .btn {
+      width: 100%;
+      text-align: right;
+      margin: 10px 0;
+    }
+
+    .btn button {
+      background-color: #00b686;
+      padding: 5px 15px;
+      border: none;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    .btn button:hover{
+      cursor: pointer;
+      background-color: #03c08e;
+    }
+
+    .btn button:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="center">
+      <div id="content">
+        <h1>รับสมัครพนักงานอาสาอำนวยความสะดวกผู้เข้ารับการฉีดวัคซีน ฯ</h1>
+        <br>
+        <a href="/">กรกฏาคม </a> | <a href="/aug"> สิงหาคม</a>
+        <br>
+        <br>
+        <h2>กรกฏาคม</h2>
+        <div class="grid__container">
+          <div class="day">อา</div>
+          <div class="day">จ</div>
+          <div class="day">อ</div>
+          <div class="day">พ</div>
+          <div class="day">พฤ</div>
+          <div class="day">ศ</div>
+          <div class="day">ส</div>
+          <div class="grid__item">27</div>
+          <div class="grid__item">28</div>
+          <div class="grid__item">29</div>
+          <div class="grid__item">30</div>
+          <div class="grid__item">1</div>
+          <div class="grid__item">2</div>
+          <div class="grid__item">3</div>
+          <div class="grid__item">4</div>
+          <div class="grid__item">5</div>
+          <div class="grid__item">6</div>
+          <div class="grid__item">7</div>
+          <div class="grid__item">8</div>
+          <div class="grid__item">9</div>
+          <div class="grid__item">10</div>
+          <div class="grid__item">11</div>
+          <div class="grid__item">12</div>
+          <div class="grid__item">13</div>
+          <div class="grid__item">14</div>
+          <div class="grid__item">15</div>
+          <div class="grid__item">16</div>
+          <div class="grid__item">17</div>
+          <div class="grid__item">18</div>
+          <div class="grid__item click" id="2021-07-19" onclick="selectDate(this)">
+            19
+            <br>
+            <% 
+              const find_date19 = data.find(item => {
+                const d = new Date(item._id)
+                return 19 == d.getDate()
+              })
+              if (find_date19) {
+                const rs19 = 6 - find_date19.count
+                if (rs19 != 0) {
+            %>
+                  <span class="empty"><%= `ว่าง ${rs19} คน` %></span>
+            <%
+                } else {
+            %>
+                  <span class="full"><%= 'เต็ม' %></span>
+            <%
+                }
+              } else {
+            %>
+              <span class="empty"><%= 'ว่าง 6 คน' %></span>
+            <% } %>
+          </div>
+          <div class="grid__item click" id="2021-07-20" onclick="selectDate(this)">
+            20
+            <br>
+            <% 
+              const find_date20 = data.find(item => {
+                const d = new Date(item._id)
+                return 20 == d.getDate()
+              })
+              if (find_date20) {
+                const rs20 = 6 - find_date20.count
+                if (rs20 != 0) {
+            %>
+                  <span class="empty"><%= `ว่าง ${rs20} คน` %></span>
+            <%
+                } else {
+            %>
+                  <span class="full"><%= 'เต็ม' %></span>
+            <%
+                }
+              } else {
+            %>
+              <span class="empty"><%= 'ว่าง 6 คน' %></span>
+            <% } %>
+          </div>
+          <div class="grid__item click" id="2021-07-21" onclick="selectDate(this)">
+            21
+            <br>
+            <% 
+              const find_date21 = data.find(item => {
+                const d = new Date(item._id)
+                return 21 == d.getDate()
+              })
+              if (find_date21) {
+                const rs21 = 6 - find_date21.count
+                if (rs21 != 0) {
+            %>
+                  <span class="empty"><%= `ว่าง ${rs21} คน` %></span>
+            <%
+                } else {
+            %>
+                  <span class="full"><%= 'เต็ม' %></span>
+            <%
+                }
+              } else {
+            %>
+              <span class="empty"><%= 'ว่าง 6 คน' %></span>
+            <% } %>
+          </div>
+          <div class="grid__item click" id="2021-07-22" onclick="selectDate(this)">
+            22
+            <br>
+            <% 
+              const find_date22 = data.find(item => {
+                const d = new Date(item._id)
+                return 22 == d.getDate()
+              })
+              if (find_date22) {
+                const rs22 = 6 - find_date22.count
+                if (rs22 != 0) {
+            %>
+                  <span class="empty"><%= `ว่าง ${rs22} คน` %></span>
+            <%
+                } else {
+            %>
+                  <span class="full"><%= 'เต็ม' %></span>
+            <%
+                }
+              } else {
+            %>
+              <span class="empty"><%= 'ว่าง 6 คน' %></span>
+            <% } %>
+          </div>
+          <div class="grid__item click" id="2021-07-23" onclick="selectDate(this)">
+            23
+            <br>
+            <% 
+              const find_date23 = data.find(item => {
+                const d = new Date(item._id)
+                return 23 == d.getDate()
+              })
+              if (find_date23) {
+                const rs23 = 6 - find_date23.count
+                if (rs23 != 0) {
+            %>
+                  <span class="empty"><%= `ว่าง ${rs23} คน` %></span>
+            <%
+                } else {
+            %>
+                  <span class="full"><%= 'เต็ม' %></span>
+            <%
+                }
+              } else {
+            %>
+              <span class="empty"><%= 'ว่าง 6 คน' %></span>
+            <% } %>
+          </div>
+          <div class="grid__item">24</div>
+          <div class="grid__item">25</div>
+          <div class="grid__item">26</div>
+          <div class="grid__item">27</div>
+          <div class="grid__item">28</div>
+          <div class="grid__item click" id="2021-07-29" onclick="selectDate(this)">
+            29
+            <br>
+            <% 
+              const find_date29 = data.find(item => {
+                const d = new Date(item._id)
+                return 29 == d.getDate()
+              })
+              if (find_date29) {
+                const rs29 = 6 - find_date29.count
+                if (rs29 != 0) {
+            %>
+                  <span class="empty"><%= `ว่าง ${rs29} คน` %></span>
+            <%
+                } else {
+            %>
+                  <span class="full"><%= 'เต็ม' %></span>
+            <%
+                }
+              } else {
+            %>
+              <span class="empty"><%= 'ว่าง 6 คน' %></span>
+            <% } %>
+          </div>
+          <div class="grid__item click" id="2021-07-30" onclick="selectDate(this)">
+            30
+            <br>
+            <% 
+              const find_date30 = data.find(item => {
+                const d = new Date(item._id)
+                return 30 == d.getDate()
+              })
+              if (find_date30) {
+                const rs30 = 6 - find_date30.count
+                if (rs30 != 0) {
+            %>
+                  <span class="empty"><%= `ว่าง ${rs30} คน` %></span>
+            <%
+                } else {
+            %>
+                  <span class="full"><%= 'เต็ม' %></span>
+            <%
+                }
+              } else {
+            %>
+              <span class="empty"><%= 'ว่าง 6 คน' %></span>
+            <% } %>
+          </div>
+          <div class="grid__item">31</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal Full -->
+  <div id="myModalFull" class="modal">
+
+    <div class="modal-content">
+      <span class="closeModalFull">&times;</span>
+      <h3 style="text-align: center; color: red;">วันที่เลือกเต็มแล้ว</h3>
+    </div>
+
+  </div>
+
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form action="#">
+        <label>รหัสพนักงาน</label>
+        <div class="input__container">
+          <input type="text" name="employee_id" id="employee_id" class="input" autocomplete="off" placeholder="218xxxx">
+        </div>
+        <br>
+        <label>คำนำหน้า</label>
+        <div class="input__container">
+          <input type="text" name="prefix" id="prefix" class="input" autocomplete="off" placeholder="นาย/นาง/นางสาว">
+        </div>
+        <br>
+        <label>ชื่อ</label>
+        <div class="input__container">
+          <input type="text" name="firstname" id="firstname" class="input" autocomplete="off" placeholder="สมมติ">
+        </div>
+        <br>
+        <label>นามสกุล</label>
+        <div class="input__container">
+          <input type="text" name="lastname" id="lastname" class="input" autocomplete="off" placeholder="สมมติ">
+        </div>
+        <br>
+
+        <label>สังกัดหน่วยงาน</label>
+        <div class="input__container">
+          <input type="text" name="institution" id="institution" class="input" autocomplete="off" placeholder="ฝสส">
+        </div>
+        <br>
+
+        <label>เบอร์โทร</label>
+        <div class="input__container">
+          <input type="number" name="tel" id="tel" class="input" autocomplete="off" placeholder="096745xxxx">
+        </div>
+        <br>
+
+        <label>วันที่อาสา</label>
+        <div class="input__container">
+          <input type="text" name="date_time" id="date_time" class="input" readonly style="background-color: rgb(204, 204, 204);">
+        </div>
+        <br>
+
+        <div class="btn">
+          <button type="submit" id="bookvaccine">บันทึก</button>
+        </div>
+        
+      </form>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    const bookvaccine = document.getElementById('bookvaccine').addEventListener('click', bookVaccineFn)
+    const modal = document.getElementById("myModal");
+    const closeModal = document.getElementsByClassName("close")[0].addEventListener("click", closeModalFn)
+
+    const modalFull = document.getElementById("myModalFull");
+    const closeModalFull = document.getElementsByClassName("closeModalFull")[0].addEventListener("click", closeModalFullFn)
+
+    let date_time = document.getElementById('date_time')
+    
+    function selectDate(e) {
+      if (e.children[1].className == 'full') {
+        modalFull.style.display = "block"
+      } else {
+        date_time.value = e.id
+        modal.style.display = "block";
+      }
+    }
+
+    function closeModalFn() {
+      modal.style.display = "none";
+    }
+
+    function closeModalFullFn() {
+      modalFull.style.display = "none";
+    }
+
+    function bookVaccineFn(e) {
+      e.preventDefault()
+      const prefix = document.getElementById('prefix').value
+      const employee_id = document.getElementById('employee_id').value
+      const firstname = document.getElementById('firstname').value
+      const lastname = document.getElementById('lastname').value
+      const institution = document.getElementById('institution').value
+      const tel = document.getElementById('tel').value
+
+      const obj = {
+        prefix,
+        employee_id,
+        firstname,
+        lastname,
+        institution,
+        tel,
+        date_time: date_time.value
+      }
+
+      axios.post('/api/v1/bookvaccine', obj)
+      .then(function (response) {
+        window.location = "/";
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+
+
+
+</html>
