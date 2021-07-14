@@ -12,6 +12,7 @@ app.use(cors())
 app.set('view engine', 'ejs')
 
 app.get('/', async (req, res) => {
+  console.log('get /');
   const get_book_vaccine = await axios.get('http://localhost:3000/api/v1/bookvaccine?start_date=2021-07-01&end_date=2021-07-31')
   res.render('bookvaccine', { data: get_book_vaccine.data })
 })
@@ -37,5 +38,5 @@ mongoose
 /* use routes */
 app.use('/api/v1', require('./routes'))
 
-app.listen(3000, () => console.log(`server is running on port ${process.env.PORT}`))
+app.listen(process.env.PORT, () => console.log(`server is running on port ${process.env.PORT}`))
 
