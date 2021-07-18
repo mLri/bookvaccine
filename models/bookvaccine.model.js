@@ -4,7 +4,6 @@ const Schema = mongoose.Schema
 const bookVaccineSchema = new Schema({
   prefix: {
     type: String,
-    enum : ['นาย','นาง', 'นางสาว'],
     required: true
   },
   firstname: {

@@ -39,6 +39,9 @@ module.exports.createBookVaccine = async (req, res) => {
     const count_book_vaccine = await BookVaccine.countDocuments({ date_time: new Date(date_time) })
     if (count_book_vaccine >= 6) throw statusError.bad_request_with_message('can not bookking limit.')
 
+    const dup_data = await BookVaccine.findOne({ employee_id, date_time: new Date(date_time) })
+    if (dup_data) throw statusError.bad_request_with_message('duplicate data!')
+
     const create_data = {
       prefix,
       firstname,
