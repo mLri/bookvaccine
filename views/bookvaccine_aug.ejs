@@ -297,30 +297,7 @@
           <div class="day">ศ</div>
           <div class="day">ส</div>
           <div class="grid__item">1</div>
-          <div class="grid__item click" id="2021-08-02" onclick="selectDate(this)">
-            2
-            <br>
-            <% 
-              const find_date2 = data.find(item => {
-                const d = new Date(item._id)
-                return 2 == d.getDate()
-              })
-              if (find_date2) {
-                const rs2 = 6 - find_date2.count
-                if (rs2 != 0) {
-            %>
-                  <span class="empty"><%= `ว่าง ${rs2} คน` %></span>
-            <%
-                } else {
-            %>
-                  <span class="full"><%= 'เต็ม' %></span>
-            <%
-                }
-              } else {
-            %>
-              <span class="empty"><%= 'ว่าง 6 คน' %></span>
-            <% } %>
-          </div>
+          <div class="grid__item">2</div>
           <div class="grid__item click" id="2021-08-03" onclick="selectDate(this)">
             3
             <br>
