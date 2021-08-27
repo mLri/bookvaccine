@@ -287,7 +287,7 @@
         <a href="/aug">สิงหาคม </a> | <a href="/sep"> กันยายน</a> | <a href="/oct"> ตุลาคม</a> | <a href="/nov"> พฤศจิกายน</a>
         <br>
         <br>
-        <h2>สิงหาคม</h2>
+        <h2>พฤศจิกายน</h2>
         <div class="grid__container">
           <div class="day">อา</div>
           <div class="day">จ</div>
@@ -296,9 +296,60 @@
           <div class="day">พฤ</div>
           <div class="day">ศ</div>
           <div class="day">ส</div>
-          <div class="grid__item">1</div>
-          <div class="grid__item">2</div>
-          <div class="grid__item click" id="2021-08-03" onclick="selectDate(this)">
+
+          <div class="grid__item">31</div>
+
+          <div class="grid__item click" id="2021-11-01" onclick="selectDate(this)">
+            1
+            <br>
+            <% 
+              const find_date1 = data.find(item => {
+                const d = new Date(item._id)
+                return 1 == d.getDate()
+              })
+              if (find_date1) {
+                const rs1 = 6 - find_date1.count
+                if (rs1 != 0) {
+            %>
+                  <span class="empty"><%= `ว่าง ${rs1} คน` %></span>
+            <%
+                } else {
+            %>
+                  <span class="full"><%= 'เต็ม' %></span>
+            <%
+                }
+              } else {
+            %>
+              <span class="empty"><%= 'ว่าง 6 คน' %></span>
+            <% } %>
+          </div>
+
+          <div class="grid__item click" id="2021-11-02" onclick="selectDate(this)">
+            2
+            <br>
+            <% 
+              const find_date2 = data.find(item => {
+                const d = new Date(item._id)
+                return 2 == d.getDate()
+              })
+              if (find_date2) {
+                const rs2 = 6 - find_date2.count
+                if (rs2 != 0) {
+            %>
+                  <span class="empty"><%= `ว่าง ${rs2} คน` %></span>
+            <%
+                } else {
+            %>
+                  <span class="full"><%= 'เต็ม' %></span>
+            <%
+                }
+              } else {
+            %>
+              <span class="empty"><%= 'ว่าง 6 คน' %></span>
+            <% } %>
+          </div>
+
+          <div class="grid__item click" id="2021-11-03" onclick="selectDate(this)">
             3
             <br>
             <% 
@@ -322,7 +373,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-04" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-04" onclick="selectDate(this)">
             4
             <br>
             <% 
@@ -346,7 +398,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-05" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-05" onclick="selectDate(this)">
             5
             <br>
             <% 
@@ -370,19 +423,23 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-06" onclick="selectDate(this)">
-            6
+
+          <div class="grid__item">6</div>
+          <div class="grid__item">7</div>
+
+          <div class="grid__item click" id="2021-11-08" onclick="selectDate(this)">
+            8
             <br>
             <% 
-              const find_date6 = data.find(item => {
+              const find_date8 = data.find(item => {
                 const d = new Date(item._id)
-                return 6 == d.getDate()
+                return 8 == d.getDate()
               })
-              if (find_date6) {
-                const rs6 = 6 - find_date6.count
-                if (rs6 != 0) {
+              if (find_date8) {
+                const rs8 = 6 - find_date8.count
+                if (rs8 != 0) {
             %>
-                  <span class="empty"><%= `ว่าง ${rs6} คน` %></span>
+                  <span class="empty"><%= `ว่าง ${rs8} คน` %></span>
             <%
                 } else {
             %>
@@ -394,9 +451,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item">7</div>
-          <div class="grid__item">8</div>
-          <div class="grid__item click" id="2021-08-09" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-09" onclick="selectDate(this)">
             9
             <br>
             <% 
@@ -420,7 +476,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-10" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-10" onclick="selectDate(this)">
             10
             <br>
             <% 
@@ -444,7 +501,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-11" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-11" onclick="selectDate(this)">
             11
             <br>
             <% 
@@ -468,20 +526,20 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item">12</div>
-          <div class="grid__item click" id="2021-08-13" onclick="selectDate(this)">
-            13
+
+          <div class="grid__item click" id="2021-11-12" onclick="selectDate(this)">
+            12
             <br>
             <% 
-              const find_date13 = data.find(item => {
+              const find_date12 = data.find(item => {
                 const d = new Date(item._id)
-                return 13 == d.getDate()
+                return 12 == d.getDate()
               })
-              if (find_date13) {
-                const rs13 = 6 - find_date13.count
-                if (rs13 != 0) {
+              if (find_date12) {
+                const rs12 = 6 - find_date12.count
+                if (rs12 != 0) {
             %>
-                  <span class="empty"><%= `ว่าง ${rs13} คน` %></span>
+                  <span class="empty"><%= `ว่าง ${rs12} คน` %></span>
             <%
                 } else {
             %>
@@ -493,9 +551,36 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
+
+          <div class="grid__item">13</div>
           <div class="grid__item">14</div>
-          <div class="grid__item">15</div>
-          <div class="grid__item click" id="2021-08-16" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-15" onclick="selectDate(this)">
+            15
+            <br>
+            <% 
+              const find_date15 = data.find(item => {
+                const d = new Date(item._id)
+                return 15 == d.getDate()
+              })
+              if (find_date15) {
+                const rs15 = 6 - find_date15.count
+                if (rs15 != 0) {
+            %>
+                  <span class="empty"><%= `ว่าง ${rs15} คน` %></span>
+            <%
+                } else {
+            %>
+                  <span class="full"><%= 'เต็ม' %></span>
+            <%
+                }
+              } else {
+            %>
+              <span class="empty"><%= 'ว่าง 6 คน' %></span>
+            <% } %>
+          </div>
+
+          <div class="grid__item click" id="2021-11-16" onclick="selectDate(this)">
             16
             <br>
             <% 
@@ -519,7 +604,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-17" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-17" onclick="selectDate(this)">
             17
             <br>
             <% 
@@ -543,7 +629,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-18" onclick="selectDate(this)">
+          
+          <div class="grid__item click" id="2021-11-18" onclick="selectDate(this)">
             18
             <br>
             <% 
@@ -567,7 +654,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-19" onclick="selectDate(this)">
+          
+          <div class="grid__item click" id="2021-11-19" onclick="selectDate(this)">
             19
             <br>
             <% 
@@ -591,19 +679,23 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-20" onclick="selectDate(this)">
-            20
+
+          <div class="grid__item">20</div>
+          <div class="grid__item">21</div>
+
+          <div class="grid__item click" id="2021-11-22" onclick="selectDate(this)">
+            22
             <br>
             <% 
-              const find_date20 = data.find(item => {
+              const find_date22 = data.find(item => {
                 const d = new Date(item._id)
-                return 20 == d.getDate()
+                return 22 == d.getDate()
               })
-              if (find_date20) {
-                const rs20 = 6 - find_date20.count
-                if (rs20 != 0) {
+              if (find_date22) {
+                const rs22 = 6 - find_date22.count
+                if (rs22 != 0) {
             %>
-                  <span class="empty"><%= `ว่าง ${rs20} คน` %></span>
+                  <span class="empty"><%= `ว่าง ${rs22} คน` %></span>
             <%
                 } else {
             %>
@@ -615,9 +707,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item">21</div>
-          <div class="grid__item">22</div>
-          <div class="grid__item click" id="2021-08-23" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-23" onclick="selectDate(this)">
             23
             <br>
             <% 
@@ -641,7 +732,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-24" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-24" onclick="selectDate(this)">
             24
             <br>
             <% 
@@ -665,7 +757,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-25" onclick="selectDate(this)">
+          
+          <div class="grid__item click" id="2021-11-25" onclick="selectDate(this)">
             25
             <br>
             <% 
@@ -689,7 +782,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-26" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-26" onclick="selectDate(this)">
             26
             <br>
             <% 
@@ -713,19 +807,23 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-27" onclick="selectDate(this)">
-            27
+
+          <div class="grid__item">27</div>
+          <div class="grid__item">28</div>
+
+          <div class="grid__item click" id="2021-11-29" onclick="selectDate(this)">
+            29
             <br>
             <% 
-              const find_date27 = data.find(item => {
+              const find_date29 = data.find(item => {
                 const d = new Date(item._id)
-                return 27 == d.getDate()
+                return 29 == d.getDate()
               })
-              if (find_date27) {
-                const rs27 = 6 - find_date27.count
-                if (rs27 != 0) {
+              if (find_date29) {
+                const rs29 = 6 - find_date29.count
+                if (rs29 != 0) {
             %>
-                  <span class="empty"><%= `ว่าง ${rs27} คน` %></span>
+                  <span class="empty"><%= `ว่าง ${rs29} คน` %></span>
             <%
                 } else {
             %>
@@ -737,9 +835,8 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item">28</div>
-          <div class="grid__item">29</div>
-          <div class="grid__item click" id="2021-08-30" onclick="selectDate(this)">
+
+          <div class="grid__item click" id="2021-11-30" onclick="selectDate(this)">
             30
             <br>
             <% 
@@ -763,30 +860,7 @@
               <span class="empty"><%= 'ว่าง 6 คน' %></span>
             <% } %>
           </div>
-          <div class="grid__item click" id="2021-08-31" onclick="selectDate(this)">
-            31
-            <br>
-            <% 
-              const find_date31 = data.find(item => {
-                const d = new Date(item._id)
-                return 31 == d.getDate()
-              })
-              if (find_date31) {
-                const rs31 = 6 - find_date31.count
-                if (rs31 != 0) {
-            %>
-                  <span class="empty"><%= `ว่าง ${rs31} คน` %></span>
-            <%
-                } else {
-            %>
-                  <span class="full"><%= 'เต็ม' %></span>
-            <%
-                }
-              } else {
-            %>
-              <span class="empty"><%= 'ว่าง 6 คน' %></span>
-            <% } %>
-          </div>
+
           <div class="grid__item">1</div>
           <div class="grid__item">2</div>
           <div class="grid__item">3</div>
@@ -932,7 +1006,7 @@
 
         setTimeout(function(){ 
           modalSuccess.style.display = "none";
-          window.location = "/aug";
+          window.location = "/nov";
         }, 2000);
       })
       .catch(function (error) {

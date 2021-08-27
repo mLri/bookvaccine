@@ -12,14 +12,32 @@ app.use(cors())
 app.set('view engine', 'ejs')
 
 app.get('/', async (req, res) => {
-  console.log('get /');
-  const get_book_vaccine = await axios.get('http://localhost:3000/api/v1/bookvaccine?start_date=2021-07-01&end_date=2021-07-31')
-  res.render('bookvaccine', { data: get_book_vaccine.data })
+  // console.log('get /');
+  // const get_book_vaccine = await axios.get('http://localhost:3000/api/v1/bookvaccine?start_date=2021-07-01&end_date=2021-07-31')
+  // res.render('bookvaccine', { data: get_book_vaccine.data })
+
+  const get_book_vaccine = await axios.get('http://localhost:3000/api/v1/bookvaccine?start_date=2021-08-01&end_date=2021-08-31')
+  res.render('bookvaccine_aug', { data: get_book_vaccine.data })
 })
 
 app.get('/aug', async (req, res) => {
   const get_book_vaccine = await axios.get('http://localhost:3000/api/v1/bookvaccine?start_date=2021-08-01&end_date=2021-08-31')
   res.render('bookvaccine_aug', { data: get_book_vaccine.data })
+})
+
+app.get('/sep', async (req, res) => {
+  const get_book_vaccine = await axios.get('http://localhost:3000/api/v1/bookvaccine?start_date=2021-09-01&end_date=2021-09-30')
+  res.render('bookvaccine_sep', { data: get_book_vaccine.data })
+})
+
+app.get('/oct', async (req, res) => {
+  const get_book_vaccine = await axios.get('http://localhost:3000/api/v1/bookvaccine?start_date=2021-10-01&end_date=2021-10-31')
+  res.render('bookvaccine_oct', { data: get_book_vaccine.data })
+})
+
+app.get('/nov', async (req, res) => {
+  const get_book_vaccine = await axios.get('http://localhost:3000/api/v1/bookvaccine?start_date=2021-11-01&end_date=2021-11-30')
+  res.render('bookvaccine_nov', { data: get_book_vaccine.data })
 })
 
 /* config database */
